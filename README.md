@@ -36,8 +36,10 @@ In order to use the Docker image you have just build or pulled use:
 
 **Make sure that SELinux is disabled on the host. If you are using boot2docker you don't need to do anything.**
 
+Create a local directory to store persistent HDFS data.
+
 ```
-docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+docker run -v $LOCAL_DIR:/data -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
 ```
 
 ## Testing
@@ -59,4 +61,4 @@ The Hadoop build process is no easy task - requires lots of libraries and their 
 
 ## Automate everything
 
-As we have mentioned previousely, a Docker file was created and released in the official [Docker repository](https://registry.hub.docker.com/u/sequenceiq/hadoop-docker/)
+As we have mentioned previously, a Docker file was created and released in the official [Docker repository](https://registry.hub.docker.com/u/sequenceiq/hadoop-docker/)
